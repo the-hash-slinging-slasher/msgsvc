@@ -4,9 +4,11 @@ RUN pip install pipenv
 
 WORKDIR /app
 
-COPY * /app/
+COPY Pipfile.lock /app/
 
 RUN pipenv install
+
+COPY . .
 
 ENV FLASK_APP=msgsvc.py
 
